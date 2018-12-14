@@ -1,7 +1,9 @@
 # FYS3150_Project_5
 
 This repository contains 11 header files,
-1 cpp file and 1 python file. The header files are:
+1 cpp file and 1 python file. The remaining files are data files for plots.
+
+The header files are:
 
 * vector.h                          (A vector class made for simple 1-dim arrays)
 * matrix.h                          (A matrix class made for simple 2-dim arrays)
