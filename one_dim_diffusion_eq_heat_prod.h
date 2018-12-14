@@ -18,14 +18,13 @@ public:
 	vector<double> u;
 
 	// constructor
-	one_dim_diffusion_eq_heat_prod(vector<double> u, double dx, double dt, double(*Q) (double, double), double time = 0);
+	one_dim_diffusion_eq_heat_prod(vector<double> u, double dx, double dt, double(*Q) (double, double), double time);
 
 	// copy constructor
 	one_dim_diffusion_eq_heat_prod(const one_dim_diffusion_eq_heat_prod & copy);
 
 	// update u using explicit Euler
 	void explicit_euler_update();
-	}
 };
 
 // constructor
