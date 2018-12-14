@@ -21,7 +21,7 @@ public:
 	matrix<double> u;
 
 	// constructor
-	two_dim_diffusion_eq_heat_prod(matrix<double> u, double h, double dt, double(*Q) (double, double, double));
+	two_dim_diffusion_eq_heat_prod(matrix<double> u, double h, double dt, double(*Q) (double, double, double), double t);
 
 	// copy constructor
 	two_dim_diffusion_eq_heat_prod(const two_dim_diffusion_eq_heat_prod  & copy);
@@ -32,7 +32,7 @@ public:
 
 
 // constructor
-two_dim_diffusion_eq_heat_prod::two_dim_diffusion_eq_heat_prod(matrix<double> u, double h, double dt, double(*Q) (double, double, double)) {
+two_dim_diffusion_eq_heat_prod::two_dim_diffusion_eq_heat_prod(matrix<double> u, double h, double dt, double(*Q) (double, double, double), double time = 0) {
 	two_dim_diffusion_eq_heat_prod::u        = u;
 	two_dim_diffusion_eq_heat_prod::boundary = u;
 	two_dim_diffusion_eq_heat_prod::m        = u.m;
@@ -40,6 +40,7 @@ two_dim_diffusion_eq_heat_prod::two_dim_diffusion_eq_heat_prod(matrix<double> u,
 	two_dim_diffusion_eq_heat_prod::Q        = Q;
 	two_dim_diffusion_eq_heat_prod::dt       = dt;
 	two_dim_diffusion_eq_heat_prod::alpha    = dt / h / h;
+	two_dim_diffusion_eq_heat_prod::t        = time;
 
 	// fix matrix that represents boundary condition
 	for (int i = 1; i < m - 1; i++) {

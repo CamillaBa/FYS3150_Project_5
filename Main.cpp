@@ -38,12 +38,12 @@ int main() {
 
 			// open files for explicit Euler
 			filename1 = "explicit_euler_dx_"
-				+ std::to_string(dx)
-				+ "_t1.txt";
+				      + std::to_string(dx)
+				      + "_t1.txt";
 			myfile1.open(filename1);
 			filename2 = "explicit_euler_dx_"
-				+ std::to_string(dx)
-				+ "_t2.txt";
+				      + std::to_string(dx)
+				      + "_t2.txt";
 			myfile2.open(filename2);
 
 			// print u to file when t = 0.05
@@ -62,12 +62,12 @@ int main() {
 
 			// open files for implicit Euler
 			filename1 = "implicit_euler_dx_"
-				+ std::to_string(dx)
-				+ "_t1.txt";
+				      + std::to_string(dx)
+				      + "_t1.txt";
 			myfile1.open(filename1);
 			filename2 = "implicit_euler_dx_"
-				+ std::to_string(dx)
-				+ "_t2.txt";
+				      + std::to_string(dx)
+				      + "_t2.txt";
 			myfile2.open(filename2);
 
 			// print u to file when t = 0.05
@@ -86,12 +86,12 @@ int main() {
 
 			// open files for Crank-Nicolson
 			filename1 = "crank_nicolson_dx_"
-				+ std::to_string(dx)
-				+ "_t1.txt";
+				      + std::to_string(dx)
+				      + "_t1.txt";
 			myfile1.open(filename1);
 			filename2 = "crank_nicolson_dx_"
-				+ std::to_string(dx)
-				+ "_t2.txt";
+				      + std::to_string(dx)
+				      + "_t2.txt";
 			myfile2.open(filename2);
 
 			// print u to file when t = 0.05
@@ -139,8 +139,8 @@ int main() {
 
 			for (int i = 0; i*dt <= 0.05; i++) { eq.explicit_euler_update(); };
 			myfile.open("two_dim_implicit_euler_h_"
-				+ std::to_string(h)
-				+ "_t1.txt");
+				        + std::to_string(h)
+				        + "_t1.txt");
 			print_matrix_to_file(eq.u,myfile);
 			myfile.close();
 
@@ -149,8 +149,8 @@ int main() {
 				if (i % 10000 == 0) {std::cout << "Completed iteration: "<< i << std::endl;}
 			};
 			myfile.open("two_dim_implicit_euler_h_"
-				+ std::to_string(h)
-				+ "_t2.txt");
+				        + std::to_string(h)
+				        + "_t2.txt");
 			print_matrix_to_file(eq.u, myfile);
 			myfile.close();
 		}
@@ -182,12 +182,12 @@ int main() {
 
 		// open files for explicit Euler
 		filename1 = "pre_enr_explicit_euler_dx_"
-			+ std::to_string(dx)
-			+ "_t1.txt";
+			      + std::to_string(dx)
+			      + "_t1.txt";
 		myfile1.open(filename1);
 		filename2 = "pre_enr_explicit_euler_dx_"
-			+ std::to_string(dx)
-			+ "_t2.txt";
+			      + std::to_string(dx)
+			      + "_t2.txt";
 		myfile2.open(filename2);
 
 		// print u to file when t = 0.05
@@ -242,8 +242,8 @@ int main() {
 		std::ofstream myfile;
 		std::string filename;
 		filename = "post_enr_explicit_euler_h_"
-			+ std::to_string(h)
-			+ ".txt";
+			     + std::to_string(h)
+			     + ".txt";
 		myfile.open(filename);
 		print_matrix_to_file(eq.u, myfile);
 		myfile.close();
