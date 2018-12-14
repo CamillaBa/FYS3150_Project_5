@@ -1,5 +1,7 @@
 # FYS3150_Project_5
 
+(Please view in raw format)
+
 This repository contains 11 header files,
 1 cpp file and 1 python file. The remaining files are data files for plots.
 
