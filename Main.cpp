@@ -220,23 +220,11 @@ int main() {
 			}
 		}
 
-		{
-			two_dim_diffusion_eq_heat_prod eq(T_init, h, dt, Q_post_radioactive_enrichment);
-			eq.explicit_euler_update();
-
-			// print matrix to file
-			std::ofstream myfile;
-			std::string filename;
-			filename = "post_enr_explicit_euler_h_"
-				     + std::to_string(h)
-				     + "_after_one_dt.txt";
-			myfile.open(filename);
-			print_matrix_to_file(eq.u, myfile);
-			myfile.close();
-		}
-
 		two_dim_diffusion_eq_heat_prod eq(T_init, h, dt, Q_post_radioactive_enrichment);
-		for (int j = 0; j*dt <= 1.0; j++) { eq.explicit_euler_update(); }
+		for (int j = 0; j*dt <= 1.0; j++) { 
+			eq.explicit_euler_update(); 
+			if (j % 10000 == 0) { std::cout << "Completed iteration: " << j << std::endl; }
+		}
 
 		// print matrix to file
 		std::ofstream myfile;
